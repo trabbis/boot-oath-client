@@ -1,5 +1,8 @@
 --Oauth2 Authorization Flow
 How to test
+ref)
+https://www.javainuse.com/spring/spring-boot-oauth-access-token
+
 
 1) Launch client web page first.
 	http://localhost:8090/getEmployees
@@ -7,6 +10,9 @@ How to test
 
 2) This page will call authorization server to get the code
 	http://localhost:8080/oauth/authorize
+
+	use javainuse/javainuse
+	
 
 3) Once got the code, then call authorization server again to get the authorization token
 	http://localhost:8080/oauth/token
@@ -19,7 +25,7 @@ How about SSO(Single Sign On)?
 SSO is mostly done in client app.
 Are they using Oauth2 authorization flow too? 
 Not quite, it is Implicit
-Much simplied flow with OIDC (Open ID Connect)
+Much simplied flow with OIDC (OpenID Connect)
 
 Implicit flow, as said earlier, is designed for single-page Javascript apps. This flow is vastly similar to the Authorization Code flow, 
 except for the part involving authorization code. Due to security concerns, in this flow the client no longer receives an authorization 
