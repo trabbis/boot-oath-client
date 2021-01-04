@@ -1,4 +1,11 @@
---Oauth2 Authorization Flow
+*** OAuth 2.0 specification defines 4 types of authorization flows ***
+  Authorization Code
+  Resource Owner Password Credentials
+  Implicit
+  Client Credentials
+  
+
+2. This is the example of Oauth2 Authorization Flow
 How to test
 ref)
 https://www.javainuse.com/spring/spring-boot-oauth-access-token
@@ -21,20 +28,11 @@ https://www.javainuse.com/spring/spring-boot-oauth-access-token
 	http://localhost:8080/user/getEmployeesList
 
 =============================================	
-How about SSO(Single Sign On)?
-SSO is mostly done in client app.
-Are they using Oauth2 authorization flow too? 
-Not quite, it is Implicit
-Much simplied flow with OIDC (OpenID Connect)
-
-Implicit flow, as said earlier, is designed for single-page Javascript apps. This flow is vastly similar to the Authorization Code flow, 
-except for the part involving authorization code. Due to security concerns, in this flow the client no longer receives an authorization 
-code from the authorization server; instead, after the user agent successfully transfers credentials, the authorization server returns 
-access tokens directly to the client. Refresh tokens are not allowed in the Implicit flow.
-
+1. How about SSO(Single Sign On)?
+SSO is mostly done in client app. Very simple OAuth2 solution with OIDC (OpenID Connect)
 
 they need 
-	authorization url
+	authorization url (Url of the Identity Provider (IDP)) ... see below example
 	redirectUrl
 	clientId
 	scope
@@ -47,7 +45,7 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authConfig: AuthConfig = {
 
-  // Url of the Identity Provider
+  // Url of the Identity Provider (IDP)
   issuer: 'https://steyer-identity-server.azurewebsites.net/identity',
 
   // URL of the SPA to redirect the user to after login
@@ -98,3 +96,6 @@ export class AppComponent {
     return claims ? claims : null;
   }
 }
+
+TODO... check React solution if you have a minute
+
