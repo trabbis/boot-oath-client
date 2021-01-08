@@ -2,10 +2,10 @@
   Authorization Code
   Resource Owner Password Credentials
   Implicit
-  Client Credentials
+  Client Credentials ... Telus API uses
   
 
-2. This is the example of Oauth2 Authorization Flow
+2. This is the example of Oauth2 Authorization Code Flow
 How to test
 ref)
 https://www.javainuse.com/spring/spring-boot-oauth-access-token
@@ -21,10 +21,10 @@ https://www.javainuse.com/spring/spring-boot-oauth-access-token
 	use javainuse/javainuse
 	
 
-3) Once got the code, then call authorization server again to get the authorization token
+3) Once got authorization code, then call authorization server again to get the access token
 	http://localhost:8080/oauth/token
 
-4) Then finally call resource server url
+4) Then finally call resource server url using access token
 	http://localhost:8080/user/getEmployeesList
 
 =============================================	
